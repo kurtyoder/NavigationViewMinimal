@@ -1,0 +1,26 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dashboard="clr-namespace:NavigationViewMinimal.Avalonia.ViewModels.Dashboard"
+             xmlns:models="clr-namespace:NavigationViewMinimal.Avalonia.Models"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:DataType="dashboard:SettingsViewModel"
+             x:CompileBindings="True"
+             Background="Blue"
+             x:Class="NavigationViewMinimal.Avalonia.Views.Dashboard.SettingsView">
+    <ItemsRepeater Items="{Binding Settings}" Margin="10">
+        <ItemsRepeater.Layout>
+            <WrapLayout HorizontalSpacing="10" VerticalSpacing="10"></WrapLayout>
+        </ItemsRepeater.Layout>
+        <ItemsRepeater.ItemTemplate>
+            <DataTemplate x:DataType="models:SettingModel">
+                <Button MinHeight="100" MinWidth="100" Command="{Binding DoSettingCommand}">
+                   <StackPanel>
+                       <TextBlock Text="{Binding Title}" FontSize="20"></TextBlock>
+                   </StackPanel> 
+                </Button>
+            </DataTemplate>
+        </ItemsRepeater.ItemTemplate>
+    </ItemsRepeater>
+</UserControl>

@@ -1,0 +1,19 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:dashboard="clr-namespace:NavigationViewMinimal.Avalonia.ViewModels.Dashboard"
+             xmlns:models="clr-namespace:NavigationViewMinimal.Avalonia.Models"
+             x:CompileBindings="True"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+                Background="Green" 
+             x:DataType="dashboard:DetailsViewModel"
+             x:Class="NavigationViewMinimal.Avalonia.Views.Dashboard.DetailsView">
+    <ItemsControl Items="{Binding Details}">
+        <ItemsControl.ItemTemplate>
+            <DataTemplate x:DataType="models:DetailModel">
+                <TextBlock Text="{Binding Title}"></TextBlock>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+</UserControl>
